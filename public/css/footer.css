@@ -1,0 +1,71 @@
+/*FOOTER*/
+footer {
+    background-color: #f3f3f3;
+    height: 35vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    font-family: Ubuntu;
+    transition: all 0.5s;
+}
+footer:hover {
+    background-color: #060057;
+    .footerA {
+        color: white;
+    }
+    .columnHead {
+        color: white;
+    }
+}
+
+.footerA {
+    margin-top: 6%;
+    text-decoration: none;
+    color: #060057;
+}
+
+.Fcells {
+    font-size: clamp(1px, 1.5vw, 45px);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-self: start;
+    margin-top: 25%;
+}
+
+#Fcell1 {
+    margin-top: 13%;
+    align-self: start;
+    font-size: clamp(1px, 1.5vw, 45px);
+    padding-left: 10vw;
+    width: fit-content;
+}
+
+.columnHead {
+    font-size: clamp(3px, 2vw, 60px);
+    text-decoration: none;
+    color: #060057;
+    margin-bottom: 3%;
+}
+
+@media (max-width: 700px) {
+    footer {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: auto;
+        justify-items: center;
+        padding: 5%;
+    }
+    #Fcell1 {
+        margin-top: 25%;
+        padding: 0;
+        font-size: clamp(12px, 2.5vw, 50px);
+    }
+    .columnHead {
+        font-size: clamp(18px, 3.5vw, 65px);
+    }
+    .Fcells {
+        padding-top: 5%;
+        font-size: clamp(12px, 2.5vw, 50px);
+    }
+}

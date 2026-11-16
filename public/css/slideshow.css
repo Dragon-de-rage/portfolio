@@ -1,0 +1,136 @@
+#slideshow {
+    display: flex;
+    gap: 4vw;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    anchor-name: --my-carousel;
+    scroll-marker-group: after;
+    padding: 0;
+    margin: 0;
+
+    /*hides scroll-bar*/
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#slideshow::-webkit-scrollbar {
+    display: none;
+}
+
+#slideshow li{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+#slideshow div {
+    display: flex;
+    flex-direction: column;
+}
+
+#slideshow p {
+    text-align: center;
+}
+
+#slideshow a {
+    text-align: center;
+}
+#slideshow img {
+    width: 65%;
+    height: auto;
+    border-radius: 15px;
+}
+
+#slideshow::scroll-button(*) {
+    border: 3px #060057 solid;
+    font-size: clamp(50px, 5vw, 100px);
+    color: #060057;
+    cursor: pointer;
+    position: absolute;
+    position-anchor: --my-carousel;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+#slideshow::scroll-button(*):hover {
+    color: white;
+    background-color: #060057;
+    border-color: white;
+}
+
+#slideshow::scroll-button(*):active {
+    translate: 1px 1px;
+}
+
+#slideshow::scroll-button(*):disabled {
+    opacity: 0.2;
+    cursor: unset;
+}
+#slideshow::scroll-button(*):disabled:hover {
+    background-color: white;
+    color: #060057;
+    border-color: #060057;
+}
+
+#slideshow::scroll-button(left) {
+    content: "◄" / "Previous";
+    right: calc(anchor(left) - 150px);
+    bottom: calc(anchor(center) - 5vh);
+}
+
+#slideshow::scroll-button(right) {
+    content: "►" / "Next";
+    left: calc(anchor(right) - 150px);
+    bottom: calc(anchor(center) - 5vh);
+}
+
+#slideshow::scroll-marker-group {
+    position: absolute;
+    position-anchor: --my-carousel;
+    top: calc(anchor(bottom) - 70px);
+    justify-self: anchor-center;
+    display: flex;
+
+    justify-content: center;
+    gap: 20px;
+}
+
+#slideshow li::scroll-marker {
+    content: attr(data-accName);
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    text-indent: 16px;
+}
+
+#slideshow li::scroll-marker:target-current {
+    background-color: white;
+}
+
+@media (max-width: 700px), (max-height: 700px) {
+    #slideshow::scroll-button(left) {
+        right: calc(anchor(left) - 70px);
+    }
+
+    #slideshow::scroll-button(right) {
+        left: calc(anchor(right) - 70px);
+    }
+
+    #slideshow li::scroll-marker {
+        width: 12px;
+        height: 12px;
+    }
+
+    #slideshow img {
+        width: 55%;
+        height: auto;
+    }
+}

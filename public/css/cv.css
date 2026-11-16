@@ -1,0 +1,53 @@
+html, body {
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
+.b_cv {
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    padding: 0.75em;
+    margin: 1%;
+    color: black;
+    font-family: Ubuntu;
+    font-size: clamp(3px, 1vw, 60px);
+    text-decoration: none;
+    background: white;
+    border: 2px solid #060057;
+    border-radius: 7vh;
+    transition: all 0.5s;
+}
+
+.b_cv:hover {
+    background-color: #060057;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+.b_cv:active {
+    background-color: rgb(2, 0, 29);
+}
+
+.b_cv.no-transition {
+    transition: none !important;
+}
+
+object {
+    height: 86vh;
+}
+
+@media (max-width: 700px), (max-height: 700px) {
+    .b_cv {
+        margin: 0;
+        font-size: clamp(10px, 1vw, 30px);
+        width: clamp(100px,8vw,250px);
+    }
+    .b_cv:active {
+        background-color: #060057;
+        border-color: white;
+        color: white;
+    }
+}

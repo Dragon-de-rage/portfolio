@@ -1,0 +1,73 @@
+html, body {
+    margin: 0;
+}
+
+main h1 {
+    margin-top: 0;
+    font: normal bold clamp(25px, 3vw, 90px) Ubuntu;
+    text-align: center;
+    padding: 3% 0 3% 0;
+    color: #060057;
+    background-image: url("/images/experiences/charles&alice/charles&alice_usine_resized_trans.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    font: normal normal clamp(15px, 1.3vw, 70px) Ubuntu;
+    margin: 0 2rem 0 2rem;
+    line-height: 1.6;
+}
+
+section h2 {
+    font: normal bold clamp(25px, 2vw, 90px) Ubuntu;
+    color: #060057;
+}
+
+section a {
+    color: #060057;
+}
+
+ul {
+    color: #060057;
+    line-height: 1.6;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    width: fit-content;
+    padding-right: 1%;
+}
+
+#thermoformeuse {
+    display: flex;
+    flex-direction: row;
+}
+
+#thermoformeuse img {
+    width: 100vw;
+}
+
+#thermoformeuse p {
+    align-self: center;
+}
+
+#conclusion {
+    margin-bottom: 5%;
+}
+
+@media (max-width: 700px), (max-height: 700px) {
+    main h1 {
+        line-height: 6vh;
+    }
+
+    ul {
+        padding-right: 3%;
+    }
+
+    #thermoformeuse {
+        flex-direction: column;
+    }
+    #thermoformeuse img {
+        width: auto;
+    }
+}

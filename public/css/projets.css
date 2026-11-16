@@ -1,0 +1,79 @@
+/*MAIN*/
+html, body {
+    margin: 0;
+}
+
+section {
+    min-height: 92.1vh;
+    font: normal normal clamp(10px, 1.3vw, 70px) Ubuntu;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #060057;
+}
+
+section h1 {
+    padding-top: 5%;
+    font: normal bold clamp(25px, 2vw, 90px) Ubuntu;
+}
+
+section ul {
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-top: 60px;
+    align-items: flex-start;
+}
+
+section div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #060057;
+    width: 15vw;
+    height: 15vw;
+    border-radius: 3% 3% 0 0;
+}
+
+section img {
+    border-radius: 10px;
+    width: 50%;
+    transition: width 0.15s ease-out;
+}
+
+section a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: min-content;
+    text-decoration: none;
+    color: #060057;
+}
+
+section a:hover img{
+    width: 80%;
+}
+
+/*RESPONSIVENESS*/
+@media (max-width: 700px), (max-height: 700px) {
+    section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    section div {
+        width: 40vw;
+        height: 40vw;
+    }
+    section img {
+        width: 80%;
+    }
+    section a:hover img{
+        width: 95%;
+    }
+    h3 {
+        font-size: clamp(15px, 1.5vw, 90px);
+        margin-bottom: 20%;
+    }
+}
